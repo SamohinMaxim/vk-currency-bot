@@ -1,12 +1,12 @@
 import vk_api
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
-from config import VK_TOKEN
+from config import VK_TOKEN, GROUP_ID
 from extensions import CurrencyConverter, APIException
 
 def main():
     # Инициализация бота
     vk_session = vk_api.VkApi(token=VK_TOKEN)
-    longpoll = VkBotLongPoll(vk_session, group_id=239350398)
+    longpoll = VkBotLongPoll(vk_session, group_id=GROUP_ID)
     vk = vk_session.get_api()
 
     # Доступные валюты
